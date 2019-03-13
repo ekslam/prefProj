@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QPI Calculator</title>
+
+  <script src="lib/onsen/js/onsenui.js"></script>
+
+  <script src="./lib/redux.min.js"></script>
+  <script src="./main.js"></script>
+
+  
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+         input[type="button"] 
+         { 
+         display: flex;
+          flex: 1 1 calc(25% - 4px);
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          margin: 2px;
+          border-color:rgb(98, 130, 243);
+          color:white;
+          background-color:rgb(1, 56, 110);
+          opacity: 0.8;
+          
+         } 
+
+         ons-row {
+         background: rgba(255, 255, 255, 0.692);
+        }
+  
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100%; 
+          font-size: 20px;
+          display: flex; 
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+         } 
+
+         input[type="qpi"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100%; 
+          font-size: 25px;
+          display: flex; 
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+         } 
+  </style>
+
+</head>
+
+<body>
+  <!-- First navigation component: Navigator. This will remain always on top of the app. -->
+  <ons-page> 
+
+     <ons-row style="height: 15%"> 
+        <td ><input type="hidden" id="result"/></td>
+        <td ><input type="text" id="fresult"/></td>
+     </ons-row> 
+
+     <ons-row style="height: 10%"> 
+        <td ><input type="qpi" id="result1"/></td>  
+     </ons-row>
+
+     <ons-row style="height: 25%"> 
+        <!-- create button and assign value to each button -->
+        <!-- dis("__") will call function dis to display value -->
+        <td><input type="button" value="A" onclick="dis('A')"/> </td> 
+        <td><input type="button" value="B+" onclick="dis('B+')"/> </td> 
+        <td><input type="button" value="B" onclick="dis('B')"/> </td> 
+     </ons-row> 
+
+     <ons-row style="height: 25%"> 
+        <td><input type="button" value="C+" onclick="dis('C+')"/> </td> 
+        <td><input type="button" value="C" onclick="dis('C')"/> </td> 
+        <td><input type="button" value="D" onclick="dis('D')"/> </td> 
+     </ons-row> 
+
+         <!-- clr() function will call clr to clear all value -->
+     <ons-row style="height: 25%"> 
+        <td><input type="button" value="F/FD" onclick="dis('F/FD')"/> </td> 
+        <td><input type="button" value="CLR" onclick="clr()"/> </td> 
+        <td><input type="button" value="=" onclick="solve()"/> </td> 
+     </ons-row> 
+
+  </ons-page> 
+  
+</body>
+
+</html>
